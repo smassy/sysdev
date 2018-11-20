@@ -21,7 +21,7 @@ FLUSH PRIVILEGES;
 ```
 
 - You are now ready to load the schema for the project. 
-- Change to the root directory for the project where the shema.sql file is located.
+- Change to the root directory for the project where the shema.sql file is located or get it straight from [here](https://github.com/smassy/sysdev/raw/master/schema.sql).
 - Log in as user sd_project using the password SimplePass18
 - Type:
 
