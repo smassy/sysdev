@@ -9,10 +9,7 @@ class CategoriesController extends AppController {
 	}
 
 	public function list() {
-		$query = $this->Categories->find()->leftJoinWith("Items");
-		$query = $query->select(["id" => "Categories.id", "name" => "Categories.name", "count" => $query->func()->count("Items.category_id")])->group("Categories.id");
-		$query =  $query->order("Categories.name");
-		$this->set("categories", $query);
+		$this->set("categories", $this->Categories->getCountInfo());
 		$this->set("blankCategory", $this->Categories->newEntity());
 	}
 

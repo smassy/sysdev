@@ -77,4 +77,16 @@ class CategoriesTable extends Table
 
         return $rules;
     }
+
+    /*
+     * Return a query qhich, once executed, will return sorted categories
+     * arrays with the id and name of each category along with a count of how
+     * many items are associated with each.
+     */
+    public function getCountInfo() {
+		$query = $this->find()->leftJoinWith("Items");
+		$query = $query->select(["id" => "Categories.id", "name" => "Categories.name", "count" => $query->func()->count("Items.category_id")])->group("Categories.id");
+		$query =  $query->order("Categories.name");
+		return $query;
+    }
 }
