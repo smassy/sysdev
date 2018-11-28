@@ -29,7 +29,9 @@
 - [Not Started] Items Controller: Provide sorting ability. (SM)
 - [Not Started] Items Controller: Update quantity via AJAX (SM)
 - [Not Started] Items Controller: Search via AJAX. (SM)
+- [Not Started] Controllers: build print function (SM)
 - [Not Started] Authentication support. (SM)
+- [Not Started] Database Dump (SM)
 
 ### Front-end
 
@@ -46,6 +48,7 @@
 - [Not Started] Dashboard: Colourise items according to stock. (A)
 - [Not Started] Navigation/header/footer (A/S)
 - [Not Started] Dashboard: Update quantity via AJAX (A/SM)
+- [Not started] Ensure print button functionality. (A)
 - [Not Started] Dashboard: Search Widget using AJAX (A/SM)
 - [Not Started] Login Page (A)
 
@@ -58,6 +61,7 @@
 - [Not Started] Categories/Suppliers/Units: Style action buttons especially .editPending and .deletePending.
 - [Not Started] Style Item Add View (S)
 - [Not Started] Style Dashboard IMPORTANT (S/A)
+- [Not Started] Ensure Print view looks professional (S)
 - [Not Started] Style login page (S)
 
 ### Project Support
