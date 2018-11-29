@@ -36,6 +36,18 @@ SHOW TABLES;
 DESCRIBE items;
 ```
 
+You can now load sample data:
+
+```
+source testData.sql;
+```
+
+And check...
+
+```
+SELECT * FROM items;
+```
+
 ## GIT
 
 Project management will be done through git so you must create a git account; I believe there is a dedicated Windows client if you like, but you can also stick with the web interface. Please notify me once that is done and I will add you as collaborator to the repository.
