@@ -1,6 +1,6 @@
 <h1>Manage Categories</h1>
 <h2>Current Categories</h2>
-<table>
+<table class="manageSecondary" id="CategoriesTable">
 <thead>
 <tr>
 <th>Name</th>
