@@ -9,6 +9,7 @@ class CategoriesController extends AppController {
 	}
 
 	public function list() {
+		$this->viewBuilder()->setLayout('window');
 		$this->set("categories", $this->Categories->getCountInfo());
 		$this->set("blankCategory", $this->Categories->newEntity());
 	}
