@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Event\EventListenerInterface;
 
 /**
  * Categories Model
@@ -74,10 +75,21 @@ class CategoriesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['name']));
-
+debug("TEST");
         return $rules;
     }
 
+    public function implementedEvents() {
+	    return ["Model.beforeDelete" => "beforeDelete"];
+    }
+
+    public function beforeDelete($event, $entity) {
+	    $query = $this->find()->innerJoinWith("Items")->where(["Items.category_id = " => $entity->id]);
+	    if ($query->count() > 0) {
+		    return false;
+	    }
+    }
+	
     /*
      * Return a query qhich, once executed, will return sorted categories
      * arrays with the id and name of each category along with a count of how
