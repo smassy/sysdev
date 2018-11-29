@@ -62,4 +62,27 @@ class SuppliersTable extends Table
 
         return $validator;
     }
+
+    public function implementedEvents() {
+	    return ["Model.beforeDelete" => "beforeDelete"];
+    }
+
+    public function beforeDelete($event, $entity) {
+	    $query = $this->find()->innerJoinWith("Items")->where(["Items.supplier_id = " => $entity->id]);
+	    if ($query->count() > 0) {
+		    return false;
+	    }
+    }
+	
+    /*
+     * Return a query qhich, once executed, will return sorted suppliers
+     * arrays with the id and name of each supplier along with a count of how
+     * many items are associated with each.
+     */
+    public function getCountInfo() {
+		$query = $this->find()->leftJoinWith("Items");
+		$query = $query->select(["id" => "Suppliers.id", "name" => "Suppliers.name", "count" => $query->func()->count("Items.supplier_id")])->group("Suppliers.id");
+		$query =  $query->order("Suppliers.name");
+		return $query;
+    }
 }
