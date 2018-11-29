@@ -22,9 +22,8 @@ function resetEditForm() {
 	$(".editPending").removeClass("editPending");
 }
 
-$(".actionButton").click(function () {
+$(".editAction").click(function () {
 	var info  = decodeURIComponent($(this).attr("id")).replace("+", " ").split("-");
-	console.log("INFO: " + info);
 	if (info[0] === "edit") {
 		resetEditForm();
 		$("#editDiv").show();
@@ -32,8 +31,6 @@ $(".actionButton").click(function () {
 		$("#editDiv form").attr("action", baseUrl + info[2]);
 		$("#editDiv form input#name").focus();
 		$(this).addClass("editPending");
-	} else if (info[0] === "delete") {
-		alert("DEBUG: A delete button was pressed");
-	}
+	} 
 });
 

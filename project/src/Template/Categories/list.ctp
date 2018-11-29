@@ -19,10 +19,10 @@
 <?php echo $category->count ?>
 </td>
 <td>
-<button class="actionButton" id="edit-<?php echo urlencode(str_replace("-", "__", $category->name)) . "-" . $category->id?>">Edit</button>
+<button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $category->name)) . "-" . $category->id?>">Edit</button>
 </td>
 <td>
-<button class="actionButton" id="delete-<?php echo $category->name . "-" . $category->id?>" <?php echo $category->count > 0 ? "disabled" : "" ?>>Delete</button>
+<?php echo $category->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a category can be deleted.')\">?</button>" : $this->Form->postLink("Delete", ["action" => "delete", $category->id], ["role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this category?"]) ?>
 </td>
 </tr>
 <?php endforeach; ?>

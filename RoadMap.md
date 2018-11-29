@@ -14,7 +14,7 @@
 - Not Started: Task not been worked on yet.
 - Started: Being worked on.
 - Basic: Functional but not finished.
-- Completed: Task completed.
+- Done: Task completed.
 - Testing: Requires testing.
 
 **NOTE**: Feel free to put an estimate of completion in percentage next to the task status.
@@ -23,19 +23,19 @@
 
 ### Back-end
 
-- [Basic, 90%) Categories Controler: CRUD functionality  (SM)
+- [Done, Testing) Categories Controler: CRUD functionality  (SM)
 - [Not Started] Use Categories controller to create Suppliers and Units Controllers. (SM)
 - [Not Started] Items Controller: Basic CRUD functionality (SM)
 - [Not Started] Items Controller: Provide sorting ability. (SM)
-- [Not Started] Items Controller: Update quantity via AJAX (SM)
-- [Not Started] Items Controller: Search via AJAX. (SM)
+- [Not Started] Items Controller: Update quantity only (SM)
+- ?? [Not Started] Items Controller: Search via AJAX. (SM)
 - [Not Started] Controllers: build print function (SM)
 - [Not Started] Authentication support. (SM)
 - [Not Started] Database Dump (SM)
 
 ### Front-end
 
-- [Basic, 90%): Categories View: Basic CRUD functionality with proper user safeguards and hooks for styling. (SM)
+- [Done, Testing]: Categories View: Basic CRUD functionality with proper user safeguards and hooks for styling. (SM)
 - [Not Started] Use Categories view to create Suppliers and Units. (SM)
 - [Not Started] Finish Categories/Suppliers/Units views if necessary; add edit/delete icons? Check validation. (A/S)
 - [Not Started] Basic Item Add view (SM)
@@ -47,9 +47,9 @@
 - [Not Started] Dashboard: Prominent warning for low stock items (A)
 - [Not Started] Dashboard: Colourise items according to stock. (A)
 - [Not Started] Navigation/header/footer (A/S)
-- [Not Started] Dashboard: Update quantity via AJAX (A/SM)
+- [Not Started] Dashboard: Update quantity via AJAX or POST (A/SM)
 - [Not started] Ensure print button functionality. (A)
-- [Not Started] Dashboard: Search Widget using AJAX (A/SM)
+- [Not Started] Dashboard: Search Widget using jQuery (A/SM)
 - [Not Started] Login Page (A)
 
 ### Styling/Design
@@ -58,7 +58,7 @@
 - [Not Started] Navigation/header/footer (S/A)
 - [Not Started] Review form validation colour scheme (S)
 - [Not Started] Categories/Suppliers/Units: Style Tables and forms (S)
-- [Not Started] Categories/Suppliers/Units: Style action buttons especially .editPending and .deletePending.
+- [Not Started] Categories/Suppliers/Units: Style action buttons especially .editAction, .delAction, .noDelete and .editPending.
 - [Not Started] Style Item Add View (S)
 - [Not Started] Style Dashboard IMPORTANT (S/A)
 - [Not Started] Ensure Print view looks professional (S)

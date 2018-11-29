@@ -38,5 +38,14 @@ class CategoriesController extends AppController {
 		}
 		$this->set(compact("category"));
 	}
+
+	public function delete($id) {
+		$this->request->allowMethod(["post", "delete"]);
+		$category = $this->Categories->get($id);
+		if ($this->Categories->delete($category)) {
+			$this->Flash->success(__("Category " . $category->name . " successfully deleted."));
+			return $this->redirect(["action" => "list"]);
+		}
+	}
 }
 ?>
