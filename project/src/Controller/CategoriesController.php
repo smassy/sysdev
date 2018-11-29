@@ -47,6 +47,8 @@ class CategoriesController extends AppController {
 			$this->Flash->success(__("Category " . $category->name . " successfully deleted."));
 			return $this->redirect(["action" => "list"]);
 		}
+		$this->Flash->error(__("The category could not be deleted (This shouldn't have happened!)."));
+		return $this->redirect(["action" => "list"]);
 	}
 }
 ?>
