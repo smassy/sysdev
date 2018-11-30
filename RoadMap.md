@@ -45,8 +45,9 @@
 - [Not Started] Full dashboard design (A)
 - [Not Started] Categories open/close on dashboard via jQuery (A)
 - [Not Started] Dashboard: Prominent warning for low stock items (A)
-- [Not Started] Dashboard: Colourise items according to stock. (A)
+- [Not Started] Dashboard: Colourise items according to stock. (A/S)
 - [Not Started] Navigation/header/footer (A/S)
+- [Not Started] Add butons and sections which aren't implemented (e.g manage users, reorder, etc.), use onclick alert to say it isn't working, use notImplemented class. (A)
 - [Not Started] Dashboard: Update quantity via AJAX or POST (A/SM)
 - [Not started] Ensure print button functionality. (A)
 - [Not Started] Dashboard: Search Widget using jQuery (A/SM)
@@ -61,6 +62,7 @@
 - [Not Started] Categories/Suppliers/Units: Style action buttons especially .editAction, .delAction, .noDelete and .editPending.
 - [Not Started] Style Item Add View (S)
 - [Not Started] Style Dashboard IMPORTANT (S/A)
+- [Not Started] Style class .notImplemented to shot buttons and links don't work. (S)
 - [Not Started] Ensure Print view looks professional (S)
 - [Not Started] Style login page (S)
 
