@@ -28,6 +28,11 @@ $(".editAction").click(function () {
 		resetEditForm();
 		$("#editDiv").show();
 		$("#editDiv form input#name").val(info[1].replace("__", "-"));
+		if ($(this).parent().parent().find(".whole").length > 0) {
+			$("#editDiv form input#is-whole").prop("checked", true);
+		} else {
+			$("#editDiv form input#is-whole").prop("checked", false);
+		}
 		$("#editDiv form").attr("action", baseUrl + info[2]);
 		$("#editDiv form input#name").focus();
 		$(this).addClass("editPending");

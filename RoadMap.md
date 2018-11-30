@@ -24,7 +24,7 @@
 ### Back-end
 
 - [Done, Testing) Categories Controler: CRUD functionality  (SM)
-- [Not Started] Use Categories controller to create Suppliers and Units Controllers. (SM)
+- [Done, Testing] Use Categories controller to create Suppliers and Units Controllers. (SM)
 - [Not Started] Items Controller: Basic CRUD functionality (SM)
 - [Not Started] Items Controller: Provide sorting ability. (SM)
 - [Not Started] Items Controller: Update quantity only (SM)

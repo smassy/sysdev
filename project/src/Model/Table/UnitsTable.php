@@ -66,4 +66,27 @@ class UnitsTable extends Table
 
         return $validator;
     }
+
+    public function implementedEvents() {
+	    return ["Model.beforeDelete" => "beforeDelete"];
+    }
+
+    public function beforeDelete($event, $entity) {
+	    $query = $this->find()->innerJoinWith("Items")->where(["Items.unit_id = " => $entity->id]);
+	    if ($query->count() > 0) {
+		    return false;
+	    }
+    }
+	
+    /*
+     * Return a query qhich, once executed, will return sorted units
+     * arrays with the id and name of each unit along with a count of how
+     * many items are associated with each.
+     */
+    public function getCountInfo() {
+		$query = $this->find()->leftJoinWith("Items");
+		$query = $query->select(["id" => "Units.id", "name" => "Units.name", "count" => $query->func()->count("Items.unit_id"), "is_whole" => "Units.is_whole"])->group("Units.id");
+		$query =  $query->order("Units.name");
+		return $query;
+    }
 }
