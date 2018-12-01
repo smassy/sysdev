@@ -25,10 +25,9 @@
 
 - [Done, Testing) Categories Controler: CRUD functionality  (SM)
 - [Done, Testing] Use Categories controller to create Suppliers and Units Controllers. (SM)
-- [Not Started] Items Controller: Basic CRUD functionality (SM)
+- [Basic, 75%] Items Controller: Basic CRUD functionality (SM)
 - [Not Started] Items Controller: Provide sorting ability. (SM)
 - [Not Started] Items Controller: Update quantity only (SM)
-- ?? [Not Started] Items Controller: Search via AJAX. (SM)
 - [Not Started] Controllers: build print function (SM)
 - [Not Started] Authentication support. (SM)
 - [Not Started] Database Dump (SM)
