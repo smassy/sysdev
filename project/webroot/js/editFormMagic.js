@@ -39,3 +39,10 @@ $(".editAction").click(function () {
 	} 
 });
 
+window.onunload = function () {
+	var opener = window.opener;
+	if (!opener.closed) {
+		opener.reload();
+	}
+};
+
