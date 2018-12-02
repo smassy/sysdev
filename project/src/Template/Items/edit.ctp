@@ -1,4 +1,4 @@
-<h1>Update Item</h1>
+<h2>Update Item</h2>
 <div id="itemForm">
 <?php
 echo $this->Form->create($item);

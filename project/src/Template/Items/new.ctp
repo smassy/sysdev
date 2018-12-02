@@ -1,4 +1,4 @@
-<h1>Create Item</h1>
+<h2>Create Item</h2>
 <div id="itemForm">
 <?php
 echo $this->Form->create($item);
