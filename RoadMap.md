@@ -39,7 +39,7 @@
 - [Not Started] Finish Categories/Suppliers/Units views if necessary; add edit/delete icons? Check validation. (A/S)
 - [Done, Testing] Basic Item Add view (SM)
 - [Not Started] Full Item Add View and validation (A)
-- [Not Started] Skeleton Item List view with sorting AKA dashboard (SM)
+- [Done, Testing] Skeleton Item List view with sorting AKA dashboard (SM)
 - [Not Started] Save sorting preference via cookie or web storage and ensure it is carried over. (A)
 - [Not Started] Full dashboard design (A)
 - [Not Started] Categories open/close on dashboard via jQuery (A)
