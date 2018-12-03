@@ -25,9 +25,6 @@ Search results will appear here if there is a search term in the widget.
 </div>
 <?php foreach ($category->items as $item): ?>
 <div class="row">
-<ul class="item" id="<?= "item-" . $item->id ?>">
-<li class="itemName"><?= $this->Html->link($item->name, ["action" => "view", $item->id], ["class" => "viewLink"]) ?></li>
-<li class="itemSupplier"><?= $item->supplier->name ?></li>
 <?php
 $stockClass = "";
 if ($item->qty > $item->threshold) {
@@ -38,7 +35,10 @@ if ($item->qty > $item->threshold) {
 	$stockClass = "lowStock";
 }
 ?>
-<li class="itemQty <?= $stockClass ?>"><span class="itemQtyNum"><?= $item->qty ?></span>&nbsp;<span class="itemUnit"><?=$item->unit->name?></span></li>
+<ul class="item <?= $stockClass ?>" id="<?= "item-" . $item->id ?>">
+<li class="itemName"><?= $this->Html->link($item->name, ["action" => "view", $item->id], ["class" => "viewLink"]) ?></li>
+<li class="itemSupplier"><?= $item->supplier->name ?></li>
+<li class="itemQty"><span class="itemQtyNum"><?= $item->qty ?></span>&nbsp;<span class="itemUnit"><?=$item->unit->name?></span></li>
 </ul>
 </li>
 </div>
