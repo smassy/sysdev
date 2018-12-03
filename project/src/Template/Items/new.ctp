@@ -4,17 +4,17 @@
 echo $this->Form->create($item);
 echo $this->Form->control("name", ["id" => "itemName"]); ?>
 <div class="select" id="catDiv">
-<label id="catLabel" class="optLabel" for="catSelect">Category</label> <?= $this->Form->select("Items.category_id", $categories->combine("id", "name"), ["empty" => true, "id" => "catSelect"]); ?>
+<label id="catLabel" class="optLabel" for="catSelect">Category</label> <?= $this->Form->select("Items.category_id", $categories->combine("id", "name"), ["id" => "catSelect"]); ?>
 <button class="manageBtn" type="button" onclick="manage('categories')">Manage</button>
 </div>
 <div class="select" id="supDiv">
-<label id="supLabel" class="optLabel" for="supSelect">Supplier</label> <?= $this->Form->select("Items.supplier_id", $suppliers->combine("id", "name"), ["empty" => true, "id" => "supSelect"]); ?>
+<label id="supLabel" class="optLabel" for="supSelect">Supplier</label> <?= $this->Form->select("Items.supplier_id", $suppliers->combine("id", "name"), ["id" => "supSelect"]); ?>
 <button class="manageBtn" type="button" onclick="manage('suppliers')">Manage</button>
 </div>
 <?php echo $this->Form->control("qty", ["label" => "Quantity", "id" => "itemQty"]);
 echo $this->Form->control("threshold", ["label" => "Low stock threshold", "id" => "itemThreshold"]); ?>
 <div class="select" id="uniDiv">
-<label id="uniLabel" class="optLabel" for="uniSelect">Unit</label> <?= $this->Form->select("Items.unit_id", $units->combine("id", "name"), ["empty" => true,"id" => "uniSelect"]); ?>
+<label id="uniLabel" class="optLabel" for="uniSelect">Unit</label> <?= $this->Form->select("Items.unit_id", $units->combine("id", "name"), ["id" => "uniSelect"]); ?>
 <button class="manageBtn" type="button" onclick="manage('units')">Manage</button>
 </div>
 <?php
