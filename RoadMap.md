@@ -25,7 +25,7 @@
 
 - [Done, Testing) Categories Controler: CRUD functionality  (SM)
 - [Done, Testing] Use Categories controller to create Suppliers and Units Controllers. (SM)
-- [Basic, 75%] Items Controller: Basic CRUD functionality (SM)
+- [Done, Testing] Items Controller: Basic CRUD functionality (SM)
 - [Not Started] Items Controller: Provide sorting ability. (SM)
 - [Not Started] Items Controller: Update quantity only (SM)
 - [Not Started] Controllers: build print function (SM)
@@ -35,9 +35,9 @@
 ### Front-end
 
 - [Done, Testing]: Categories View: Basic CRUD functionality with proper user safeguards and hooks for styling. (SM)
-- [Not Started] Use Categories view to create Suppliers and Units. (SM)
+- [Done, Testing] Use Categories view to create Suppliers and Units. (SM)
 - [Not Started] Finish Categories/Suppliers/Units views if necessary; add edit/delete icons? Check validation. (A/S)
-- [Not Started] Basic Item Add view (SM)
+- [Done, Testing] Basic Item Add view (SM)
 - [Not Started] Full Item Add View and validation (A)
 - [Not Started] Skeleton Item List view with sorting AKA dashboard (SM)
 - [Not Started] Save sorting preference via cookie or web storage and ensure it is carried over. (A)

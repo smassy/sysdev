@@ -2,6 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use \DateTime;
 
 /**
  * Item Entity
@@ -43,4 +44,9 @@ class Item extends Entity
         'supplier' => true,
         'unit' => true
     ];
+
+    public function getDaysSinceArrived() {
+	    $today = new DateTime();
+	    return $this->last_added->diff($today)->format("%a");
+    }
 }
