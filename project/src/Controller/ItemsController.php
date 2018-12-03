@@ -19,14 +19,11 @@ class ItemsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function list()
-    {
-        $this->paginate = [
-            'contain' => ['Categories', 'Suppliers', 'Units']
-        ];
-        $items = $this->paginate($this->Items);
-
-        $this->set(compact('items'));
+    public function list() {
+//	$items = $this->Items->find("all", ["contain" => ["Categories", "Units", "Suppliers"]]);
+	$this->loadModel("Categories");
+	$categories = $this->Categories->find("all", ["contain" => ["Items", "Items.Suppliers", "Items.Units"]]);
+	$this->set(compact("categories"));
     }
 
     /**
