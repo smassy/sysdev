@@ -12,7 +12,7 @@
 <tbody>
 <?php foreach ($categories as $category): ?>
 <tr>
-<td>
+<td class="name">
 <?php echo $category->name ?>
 </td>
 <td>

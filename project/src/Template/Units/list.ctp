@@ -13,7 +13,7 @@
 <tbody>
 <?php foreach ($units as $unit): ?>
 <tr>
-<td>
+<td class="name">
 <?php echo $unit->name ?>
 </td>
 <td class="<?= $unit->is_whole ? "whole" : "notWhole"?>">

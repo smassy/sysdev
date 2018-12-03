@@ -12,7 +12,7 @@
 <tbody>
 <?php foreach ($suppliers as $supplier): ?>
 <tr>
-<td>
+<td class="name">
 <?php echo $supplier->name ?>
 </td>
 <td>
