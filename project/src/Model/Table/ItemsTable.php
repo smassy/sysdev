@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use \DateTime;
 
 /**
  * Items Model
@@ -102,5 +103,17 @@ class ItemsTable extends Table
         $rules->add($rules->existsIn(['unit_id'], 'Units'));
 
         return $rules;
+    }
+
+    public function implementedEvents() {
+	    return ["Model.beforeSave" => "beforeSave"];
+    }
+
+    public function beforeSave($event, $entity) {
+	    if ($entity->isNew() && $entity->qty > 0) {
+		    $entity->last_added = (new DateTime('now'))->format('Y-m-d H:i:s');
+	    } elseif ($entity->qty > $entity->getOriginal("qty")) {
+		    $entity->last_added = (new DateTime('now'))->format('Y-m-d H:i:s');
+	    }
     }
 }

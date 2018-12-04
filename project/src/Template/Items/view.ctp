@@ -2,6 +2,7 @@
 <ul id="itemActions">
 <li class="itemAction" id="editItem"><?= $this->Html->link("Edit", ["action" => "edit", $item->id]) ?></li>
 <li class="itemAction" id="deleteItem"><?= $this->Form->postLink("Delete", ["action" => "delete", $item->id], ["confirm" => "Are you sure you want to delete this item (" . $item->name . ")? this cannot be undone!"]) ?></li>
+<li><button class="itemAction notImplemented">Reorder</button></li>
 </ul>
 <div id="itemDetails">
 <table>
@@ -44,9 +45,10 @@
 <tr>
 <td class="itemLabel">Last arrival on</td>
 <td class="itemDetail">
-<?= $item->last_added->format("F j, Y") ?>
+<?= $item->last_added ? $item->last_added->format("F j, Y") : "NEVER" ?>
 &nbsp;
 <?php
+if ($item->last_added) {
 echo "(";
 $delta = $item->getDaysSinceArrived();
 switch($delta) {
@@ -57,6 +59,7 @@ case 1: echo "Yesterday";
 default: echo $delta . " days ago";
 }
 echo ")";
+}
 ?>
 </td>
 </tr>

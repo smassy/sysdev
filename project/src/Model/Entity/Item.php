@@ -46,7 +46,10 @@ class Item extends Entity
     ];
 
     public function getDaysSinceArrived() {
-	    $today = new DateTime();
-	    return $this->last_added->diff($today)->format("%a");
+	    if ($this->last_added) {
+	    	$today = new DateTime();
+	    	return $this->last_added->diff($today)->format("%a");
+	    }
+	    return -1;
     }
 }
