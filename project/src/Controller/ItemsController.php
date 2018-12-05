@@ -20,9 +20,19 @@ class ItemsController extends AppController
      * @return \Cake\Http\Response|void
      */
     public function list() {
-//	$items = $this->Items->find("all", ["contain" => ["Categories", "Units", "Suppliers"]]);
 	$this->loadModel("Categories");
 	$categories = $this->Categories->find("all", ["contain" => ["Items", "Items.Suppliers", "Items.Units"]]);
+	$sort = $this->request->getQuery("sort");
+	$order = $this->request->getQuery("order");
+	if (in_array($sort, array("qty", "name", "last_added"), true)) {
+		$this->set(compact("sort"));
+	}
+	if (in_array($order, array("desc"))) {
+		$order = SORT_DESC;
+	} else {
+		$order = SORT_ASC;
+	}
+	$this->set(compact("order"));
 	$this->set(compact("categories"));
     }
 
