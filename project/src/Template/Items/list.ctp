@@ -14,8 +14,8 @@ Search results will appear here if there is a search term in the widget.
 <div id="categoriesDiv">
 <ul id="categoriesList">
 <?php foreach ($categories as $category): ?>
-<?php if (sizeof($category->items) > 0): ?>
-<li class="categoryName"><?= $category->name ?>
+<?php if (isset($all) || sizeof($category->items) > 0): ?>
+<li class="categoryName"><?= (isset($all) ? "All Items" : $category->name) ?>
 <div class="row">
 <ul class="header">
 <li class="heading">Name</li>
