@@ -30,7 +30,10 @@ class ItemsController extends AppController
 	}
 	$sort = $this->request->getQuery("sort");
 	$order = $this->request->getQuery("order");
-	if (in_array($sort, array("qty", "name", "last_added"), true)) {
+	if (in_array($sort, array("qty", "name", "last_added", "thresh_delta"), true)) {
+		if ($sort == "tresh_delta") {
+			$sort = "TreshDelta";
+		}
 		$this->set(compact("sort"));
 	}
 	if (in_array($order, array("desc"))) {

@@ -45,6 +45,10 @@ class Item extends Entity
         'unit' => true
     ];
 
+    public function _getThreshDelta() {
+	    return $this->qty - $this->threshold;
+    }
+
     public function getDaysSinceArrived() {
 	    if ($this->last_added) {
 	    	$today = new DateTime();
