@@ -17,7 +17,7 @@ Search results will appear here if there is a search term in the widget.
 <option value="last_added">Stock Age</option>
 </select>
 <input type="checkbox" id="reverseCheckbox" name="reverseCheckbox" value="desc" /> <label id="reverseLabel" for="reverseCheckbox">Reverse</label>
-
+<input type="checkbox" name="showCategories" id="showCategories" value="true" checked="checked" /><label id="showCategoriesLabel" for="showCategories">Categories</label>
 </div>
 <div id="categoriesDiv">
 <ul id="categoriesList">
