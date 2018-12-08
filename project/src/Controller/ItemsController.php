@@ -34,14 +34,15 @@ class ItemsController extends AppController
 		if ($sort == "tresh_delta") {
 			$sort = "TreshDelta";
 		}
-		$this->set(compact("sort"));
+	} else {
+		$sort = "name";
 	}
 	if (in_array($order, array("desc"))) {
 		$order = SORT_DESC;
 	} else {
 		$order = SORT_ASC;
 	}
-	$this->set(compact("order"));
+	$this->set(compact("sort", "order"));
 	$this->set(compact("categories"));
     }
 

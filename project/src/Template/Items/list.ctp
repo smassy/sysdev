@@ -1,6 +1,13 @@
+<script>
+// This ensure that sorting prefs are reloaded.
+'use strict';
+if (window.location.search === "" && localStorage["dashboardQstring"] && localStorage["dashboardQstring"] !== "") {
+	window.location = window.location + localStorage["dashboardQstring"];
+}
+</script>
 <h2>Dashboard</h2>
 <div id="messageDiv">
-Stock messages go here.<br/><?= isset($sort) ? $sort : "NONE"?><?= $order ?>
+Stock messages go here.<br/>
 </div>
 <div id="searchWidgetDiv">
 SearchWidget goes here.
@@ -9,15 +16,15 @@ SearchWidget goes here.
 Search results will appear here if there is a search term in the widget.
 </div>
 <div id="sortOptionsDiv">
-<label id="sortLabel" for="sortSelect">Sorty by</label>
+<label id="sortLabel" for="sortSelect">Sort by</label>
 <select id="sortSelect" name="sortSelect">
-<option value="name">Name</option>
-<option value="qty">Quantity</option>
-<option value="tresh_delta">Threshold Distance</option>
-<option value="last_added">Stock Age</option>
+<option value="name" <?= ($sort == "name") ? 'selected="selected"' : ""?>>Name</option>
+<option value="qty" <?= ($sort == "qty") ? 'selected="selected"' : ""?>>Quantity</option>
+<option value="tresh_delta" <?= ($sort == "thresh_delta") ? 'selected="selected"' : ""?>>Threshold Distance</option>
+<option value="last_added" <?= ($sort == "last_added") ? 'selected="selected"' : ""?>>Stock Age</option>
 </select>
-<input type="checkbox" id="reverseCheckbox" name="reverseCheckbox" value="desc" /> <label id="reverseLabel" for="reverseCheckbox">Reverse</label>
-<input type="checkbox" name="showCategories" id="showCategories" value="true" checked="checked" /><label id="showCategoriesLabel" for="showCategories">Categories</label>
+<input type="checkbox" id="reverseCheckbox" name="reverseCheckbox" value="desc" <?= ($order == SORT_DESC) ? 'checked="checked"' : ""?>/> <label id="reverseLabel" for="reverseCheckbox">Reverse</label>
+<input type="checkbox" name="showCategories" id="showCategories" value="true" <?= !(isset($all)) ? 'checked="checked"' : ""?> /><label id="showCategoriesLabel" for="showCategories">Categories</label>
 </div>
 <div id="categoriesDiv">
 <ul id="categoriesList">
@@ -65,5 +72,5 @@ if ($item->qty > $item->threshold) {
 <?php endif; ?>
 <?php endforeach; ?>
 </ul>
-
 </div>
+<?= $this->Html->script("dashboard") ?>
