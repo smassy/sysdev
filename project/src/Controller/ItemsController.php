@@ -20,6 +20,11 @@ class ItemsController extends AppController
      * @return \Cake\Http\Response|void
      */
     public function list() {
+	    // Kludge to pass on message when redirected to persist sort options.
+	    // This would never fly in production.
+	if ($this->request->getQuery("success") == 2) {
+		$this->Flash->success("Item successfully saved.");
+	}
 	$showAll = ($this->request->getQuery("all") == 1 ? true : false);
 	if ($showAll) {
 		$this->set("all", true);
@@ -75,7 +80,7 @@ class ItemsController extends AppController
             if ($this->Items->save($item)) {
                 $this->Flash->success(__('The item has been saved.'));
 
-                return $this->redirect(['action' => 'list']);
+                return $this->redirect(['action' => 'list', "?" => ["success" => 1]]);
             }
             $this->Flash->error(__('The item could not be saved. Please, try again.'));
         }

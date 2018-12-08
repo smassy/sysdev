@@ -1,8 +1,13 @@
 <script>
 // This ensure that sorting prefs are reloaded.
 'use strict';
-if (window.location.search === "" && localStorage["dashboardQstring"] && localStorage["dashboardQstring"] !== "") {
-	window.location = window.location + localStorage["dashboardQstring"];
+var relaySuccess = false;
+if (location.search === "?success=1") {
+	relaySuccess = true;
+}
+
+if ((relaySuccess || window.location.search === "") && localStorage["dashboardQstring"] && localStorage["dashboardQstring"] !== "") {
+	window.location = window.location.toString().replace(new RegExp("\\?.*"), "") + localStorage["dashboardQstring"] + (relaySuccess ? "&success=2" : "");
 }
 </script>
 <h2>Dashboard</h2>
