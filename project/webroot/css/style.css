@@ -1,3 +1,195 @@
+/*Added  */
+
+h1{ 
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-weight: bold;
+}
+h2{
+	font-family: "Courier New", Courier, monospace;
+}
+
+#itemForm{
+	margin-left:10px;
+	  margin-right: 10px;
+}
+.categoryName{
+	list-style: none;
+	font-weight: bold;
+	padding-left: 0px;
+	font-family:Verdana,Arial,sans-serif;
+}
+
+li #addItemBtn{
+	background:#1798A5;
+	border: none;
+	border-radius: 1px;
+	padding: 8px 16px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	line-height: 1;
+    cursor: pointer;
+    text-align: center;
+	outline: none;
+}
+#addItemBtn:hover, #additemBtn:focus{
+	background:  #008CBA;
+}
+li #closeButton{
+	margin-left: 487px;
+}
+#searchInput{
+    border-top:thin solid  #1798A5;
+    border-right:thin solid #1798A5;
+    border-bottom:0;
+    border-left:thin solid  #1798A5;
+    box-shadow:0px 1px 1px 1px #1798A5;
+    float:right;
+    height:26px;
+    margin:.8em 0 0 .5em; 
+	margin-right: 20px;
+    outline:0;
+    padding:.4em 0 .4em .6em; 
+    width:183px; 
+	
+}
+#sortOptionsDiv, #searchWidgetDiv, #searchResultsDiv{
+	display: block;
+	float: right;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.sortAmt,.sortAlpha, .sortNum, .sortBoth {
+    background-color:#b9b9b9;
+    border-top:thin solid #e5e5e5;
+    box-shadow:1px 1px 1px 1px #e5e5e5;
+    cursor:pointer;
+	display: inline;
+	margin-right: 20px;
+    height:27px;
+    width:25px;
+	float:right;
+	font-size:20px;
+}
+#amt, #sort, #num, #alpha{
+	top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
+.header , .item{
+	display: flex;
+    justify-content:space-around;
+	text-align: center;
+}
+
+.header li , .item li{
+    display: inline;
+}
+/* for the nav bar*/
+.left{
+	 margin-top: 0px;
+	 float: left;
+ }
+
+table{  
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 640px; 
+    border-collapse: collapse;
+	border-spacing: 0; 
+	background: #fff;
+    margin-bottom: 1.25rem;
+    border: none;
+    table-layout: fixed;
+    width: 100%;
+	
+}
+div.container.clearfix{
+	margin: 0px 10px 0px 10px;
+}
+td, th{  
+    border: 1px solid transparent; /* No more visible border */
+    height: 30px; 
+    transition: all 0.3s;  /* Simple transition for hover effect */
+}
+
+th, .header{  
+    background: #DFDFDF;  /* Darken header a bit */
+    font-weight: bold;
+}
+
+td{  
+    background: #FAFAFA;
+    text-align: center;
+	font-weight:normal;
+	font-size: 15px;
+}
+
+/* Cells in even rows (2,4,6...) are one color */        
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+tr:nth-child(odd) td { background: #FEFEFE; }  
+/* Hover cell effect! */
+tr td:hover { background: #666; color: #FFF; }  
+
+.itemAction{
+  display:inline;  
+  list-style:none;
+  margin-left: 20px;
+  margin-right: 10px;
+  float: right;
+}
+/* align the ul li in dashboard*/
+.row {
+    max-width: 80rem;
+}
+.item.inStock{
+	
+}
+.itemName{
+	
+}
+
+table td{
+    vertical-align: middle;
+    word-break: break-all;
+}
+table thead {
+    background: none;
+}
+
+table tr {
+    border-bottom: 1px solid #ebebec;
+	line-height: 14px;
+}
+
+table thead tr {
+    border-bottom: 1px solid #1798A5;
+}
+
+table tr th {
+    padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #1798A5;
+    text-align: left;
+    border-bottom: 2px solid #1798A5;
+}
+
+table tr:nth-of-type(even) {
+    background: none;
+}
+
+button.noDelete, .editAction{
+	display: block;
+	margin: auto;
+}
+
 .disabled a,
 a.disabled {
     pointer-events: none;
@@ -20,26 +212,30 @@ a {
 }
 
 header {
-    background-color: #D33C44;
-    color: #ffffff;
+    background-color: black;
     font-size: 30px;
-    height: 84px;
+    height: 130px;
     line-height: 64px;
-    padding: 16px 0px;
+    padding: 10px 0px;
     box-shadow: 0px 1px rgba(0, 0, 0, 0.24);
 }
 
 header .header-title {
     padding-left:80px
 }
+header img.h-logo{
+	
+	float: left;
+	margin-top: 10px;
+	padding: 10px 0 20px 20px;
+	width: 25%;
+	height: 100px;
+}
 
 legend {
     color:#15848F;
 }
 
-.row {
-    max-width: 80rem;
-}
 
 .actions.columns {
     margin-top:1rem;
@@ -325,6 +521,19 @@ pre {
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
     background: #116d76;
 }
+/*for the nav of the dashboard */
+.top-bar-section{
+	float: left;
+	margin-left: 30px;
+}
+/*for the nav of the other page */
+#defaultNav{
+	height: 45px;
+}
+#sectionRight{
+	float: right;
+	margin-right: 10px;
+}
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
     background-color: #308e97;
@@ -350,37 +559,6 @@ pre {
     table-layout: fixed;
 }
 
-table {
-    background: #fff;
-    margin-bottom: 1.25rem;
-    border: none;
-    table-layout: fixed;
-    width: 100%;
-}
-
-table thead {
-    background: none;
-}
-
-table tr {
-    border-bottom: 1px solid #ebebec;
-}
-
-table thead tr {
-    border-bottom: 1px solid #1798A5;
-}
-
-table tr th {
-    padding: 0.5625rem 0.625rem;
-    font-size: 0.875rem;
-    color: #1798A5;
-    text-align: left;
-    border-bottom: 2px solid #1798A5;
-}
-
-table tr:nth-of-type(even) {
-    background: none;
-}
 
 fieldset {
     border: none;
@@ -406,7 +584,8 @@ fieldset legend {
 }
 
 button {
-    background: #966600;
+    background: #da532c;
+	font-size: 12px;
 }
 
 div.message {
@@ -518,7 +697,4 @@ div.message.hidden {
     border-bottom: 0px;
 }
 
-table td {
-    vertical-align: top;
-    word-break: break-all;
-}
+
