@@ -25,8 +25,9 @@ Search results will appear here if there is a search term in the widget.
 <select id="sortSelect" name="sortSelect">
 <option value="name" <?= ($sort == "name") ? 'selected="selected"' : ""?>>Name</option>
 <option value="qty" <?= ($sort == "qty") ? 'selected="selected"' : ""?>>Quantity</option>
-<option value="tresh_delta" <?= ($sort == "thresh_delta") ? 'selected="selected"' : ""?>>Threshold Distance</option>
+<option value="thresh_delta" <?= ($sort == "thresh_delta") ? 'selected="selected"' : ""?>>Threshold Distance</option>
 <option value="last_added" <?= ($sort == "last_added") ? 'selected="selected"' : ""?>>Stock Age</option>
+<option value="supplier" <?= ($sort == "supplier") ? 'selected="selected"' : ""?>>Supplier</option>
 </select>
 <input type="checkbox" id="reverseCheckbox" name="reverseCheckbox" value="desc" <?= ($order == SORT_DESC) ? 'checked="checked"' : ""?>/> <label id="reverseLabel" for="reverseCheckbox">Reverse</label>
 <input type="checkbox" name="showCategories" id="showCategories" value="true" <?= !(isset($all)) ? 'checked="checked"' : ""?> /><label id="showCategoriesLabel" for="showCategories">Categories</label>
@@ -48,7 +49,11 @@ Search results will appear here if there is a search term in the widget.
 if (isset($sort)) {
 $condition = array();
 foreach ($category->items as $key => $item) {
-	$condition[$key] = $item[$sort];
+	if ($sort == "supplier") {
+		$condition[$key] = $item["supplier"]["name"];
+	} else {
+		$condition[$key] = $item[$sort];
+	}
 }
 array_multisort($condition, $order, $category->items);
 }

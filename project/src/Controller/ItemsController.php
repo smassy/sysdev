@@ -35,7 +35,7 @@ class ItemsController extends AppController
 	}
 	$sort = $this->request->getQuery("sort");
 	$order = $this->request->getQuery("order");
-	if (in_array($sort, array("qty", "name", "last_added", "thresh_delta"), true)) {
+	if (in_array($sort, array("qty", "name", "last_added", "thresh_delta", "supplier"), true)) {
 		if ($sort == "tresh_delta") {
 			$sort = "TreshDelta";
 		}
