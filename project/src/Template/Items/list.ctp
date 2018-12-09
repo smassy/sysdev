@@ -12,7 +12,6 @@ if ((relaySuccess || window.location.search === "") && localStorage["dashboardQs
 </script>
 <h2>Dashboard</h2>
 <div id="messageDiv">
-Stock messages go here.<br/>
 </div>
 <div id="searchWidgetDiv">
 SearchWidget goes here.

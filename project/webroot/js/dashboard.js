@@ -64,9 +64,25 @@ function dismiss(id) {
 	}
 }
 
+function populateMessageDiv() {
+	var lowStock = $(".lowStock").length;
+	var noStock = $(".noStock").length;
+	if (lowStock == 0 && noStock && 0) {
+		$("#messageDiv").hide();
+		return;
+	}
+	if (noStock > 0) {
+		$("#messageDiv").append('<p class="noStockAler">There ' + ((noStock === 1) ? "is " : "are ") + noStock + ((noStock === 1) ? " item" : " items") + ' currently <strong>out of stock</strong>.');
+	}
+	if (lowStock > 0) {
+		$("#messageDiv").append('<p class="lowStockAler">There ' + ((lowStock === 1) ? "is " : "are ") + lowStock + ((lowStock === 1) ? " item" : " items") + ' currently <strong>understocked</strong>.');
+	}
+}
+
 $(document).ready(function () {
 	baseForm = $("#updateDiv");
 	$(baseForm).remove();
+	populateMessageDiv();
 });
 
 function validateUnit(input, isWhole) {
