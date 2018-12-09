@@ -55,12 +55,12 @@
 ### Styling/Design
 
 - [Not Started] Over all site look & feel (S)
-- [Not Started] Navigation/header/footer (S/A)
+- [Done] Navigation/header/footer (S/A)
 - [Not Started] Review form validation colour scheme (S)
-- [Not Started] Categories/Suppliers/Units: Style Tables and forms (S)
-- [Not Started] Categories/Suppliers/Units: Style action buttons especially .editAction, .delAction, .noDelete and .editPending.
-- [Not Started] Style Item Add View (S)
-- [Not Started] Style Dashboard IMPORTANT (S/A)
+- [Done] Categories/Suppliers/Units: Style Tables and forms (S)
+- [Done] Categories/Suppliers/Units: Style action buttons especially .editAction, .delAction, .noDelete and .editPending.
+- [Done] Style Item Add View (S)
+- [Done] Style Dashboard IMPORTANT (S/A)
 - [Not Started] Style class .notImplemented to shot buttons and links don't work. (S)
 - [Not Started] Ensure Print view looks professional (S)
 - [Not Started] Style login page (S)
