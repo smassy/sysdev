@@ -50,5 +50,9 @@ class UnitsController extends AppController {
 		$this->Flash->error(__("The unit could not be deleted (This shouldn't have happened!)."));
 		return $this->redirect(["action" => "list"]);
 	}
+
+    public function isAuthorized($user) {
+	    return true;
+    }
 }
 ?>
