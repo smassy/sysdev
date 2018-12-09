@@ -50,7 +50,7 @@
             <ul class="left">
                 <li><?= $this->Form->button(__("Add Item"), ["type" => "button", "id" => "addItemBtn", "onclick" => "window.location='/items/new'"]) ?></li>
 		<li><button onclick="window.open('/items/list/print')" id="printBtn">Print</button></li>
-		<li><button onclick="window.location=/users/logout" id="logoutBtn">Log Out</button></li>
+		<li><button onclick="window.location='/users/logout'" id="logoutBtn">Log Out</button></li>
             </ul>
         </div>
     </nav>
