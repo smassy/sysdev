@@ -117,6 +117,17 @@ $(document).ready(function () {
 	$("#searchResultsDiv").hide();
 	$("p#noResult").hide()
 });
+$("#searchForm").submit(function (event) {
+	event.preventDefault();
+	return false;
+});
+
+$("#searchField").keydown(function (event) {
+	if (event.which === 13) {
+		event.preventDefault();
+		return false;
+	}
+});
 
 function validateUnit(input, isWhole) {
 	if (isWhole) {
