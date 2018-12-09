@@ -28,7 +28,7 @@
 - [Done] Items Controller: Basic CRUD functionality (SM)
 - [Done] Items Controller: Provide sorting ability. (SM)
 - [Done] Items Controller: Update quantity only (SM)
-- [Not Started] Controllers: build print function (SM)
+- [Done, Testing] Controllers: build print function (SM)
 - [Not Started] Authentication support. (SM)
 - [Not Started] Database Dump (SM)
 

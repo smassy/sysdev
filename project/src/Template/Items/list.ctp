@@ -9,6 +9,7 @@ if (location.search === "?success=1") {
 if ((relaySuccess || window.location.search === "") && localStorage["dashboardQstring"] && localStorage["dashboardQstring"] !== "") {
 	window.location = window.location.toString().replace(new RegExp("\\?.*"), "") + localStorage["dashboardQstring"] + (relaySuccess ? "&success=2" : "");
 }
+var printView = <?= isset($print) ? "true" : "false"?>;
 </script>
 <h2>Dashboard</h2>
 <div id="messageDiv">
@@ -31,7 +32,7 @@ if ((relaySuccess || window.location.search === "") && localStorage["dashboardQs
 <select id="sortSelect" name="sortSelect">
 <option value="name" <?= ($sort == "name") ? 'selected="selected"' : ""?>>Name</option>
 <option value="qty" <?= ($sort == "qty") ? 'selected="selected"' : ""?>>Quantity</option>
-<option value="thresh_delta" <?= ($sort == "thresh_delta") ? 'selected="selected"' : ""?>>Threshold Distance</option>
+<option value="thresh_delta" <?= ($sort == "thresh_delta") ? 'selected="selected"' : ""?>>Restock Urgency</option>
 <option value="last_added" <?= ($sort == "last_added") ? 'selected="selected"' : ""?>>Stock Age</option>
 <option value="supplier" <?= ($sort == "supplier") ? 'selected="selected"' : ""?>>Supplier</option>
 </select>

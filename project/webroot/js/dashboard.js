@@ -116,7 +116,13 @@ $(document).ready(function () {
 	populateMessageDiv();
 	$("#searchResultsDiv").hide();
 	$("p#noResult").hide()
+	if (printView) {
+		$("#searchWidgetDiv, #searchResultsDiv").hide();
+		window.print();
+		setTimeout(function () { window.close(); }, 100);
+	}
 });
+
 $("#searchForm").submit(function (event) {
 	event.preventDefault();
 	return false;

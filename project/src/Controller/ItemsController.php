@@ -19,11 +19,16 @@ class ItemsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function list() {
+    public function list($opt = null) {
 	    // Kludge to pass on message when redirected to persist sort options.
 	    // This would never fly in production.
 	if ($this->request->getQuery("success") == 2) {
 		$this->Flash->success("Item successfully saved.");
+	}
+	// If Print is passed we load the print view.
+	if ($opt == "print") {
+		$this->viewBuilder()->setLayout("print");
+		$this->set("print", true);
 	}
 	$showAll = ($this->request->getQuery("all") == 1 ? true : false);
 	if ($showAll) {
