@@ -80,7 +80,7 @@ debug("TEST");
     }
 
     public function implementedEvents() {
-	    return ["Model.beforeDelete" => "beforeDelete"];
+	    return ["Model.beforeDelete" => "beforeDelete", "Model.beforeSave" => "beforeSave"];
     }
 
     public function beforeDelete($event, $entity) {
@@ -88,6 +88,10 @@ debug("TEST");
 	    if ($query->count() > 0) {
 		    return false;
 	    }
+    }
+
+    public function beforeSave($event, $entity) {
+	    $entity->name = ucfirst($entity->name);
     }
 	
     /*

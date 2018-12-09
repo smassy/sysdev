@@ -110,6 +110,7 @@ class ItemsTable extends Table
     }
 
     public function beforeSave($event, $entity) {
+	    $entity->name = ucfirst($entity->name);
 	    if ($entity->isNew() && $entity->qty > 0) {
 		    $entity->last_added = (new DateTime('now'))->format('Y-m-d H:i:s');
 	    } elseif ($entity->qty > $entity->getOriginal("qty")) {

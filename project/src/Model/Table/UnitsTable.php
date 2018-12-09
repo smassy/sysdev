@@ -68,7 +68,7 @@ class UnitsTable extends Table
     }
 
     public function implementedEvents() {
-	    return ["Model.beforeDelete" => "beforeDelete"];
+	    return ["Model.beforeDelete" => "beforeDelete", "Model.beforeSave" => "beforeSave"];
     }
 
     public function beforeDelete($event, $entity) {
@@ -78,6 +78,10 @@ class UnitsTable extends Table
 	    }
     }
 	
+    public function beforeSave($event, $entity) {
+	    $entity->name = ucfirst($entity->name);
+    }
+
     /*
      * Return a query qhich, once executed, will return sorted units
      * arrays with the id and name of each unit along with a count of how
