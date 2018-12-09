@@ -14,10 +14,17 @@ if ((relaySuccess || window.location.search === "") && localStorage["dashboardQs
 <div id="messageDiv">
 </div>
 <div id="searchWidgetDiv">
-SearchWidget goes here.
+<form id="searchForm">
+<label id="searchLabel" for="searchField">Search</label>
+<input type="text" id="searchField" name="searchText" />
+<button type="reset" onclick="$('#searchResultsDiv').hide()">Clear</button>
+</form>
 </div>
 <div id="searchResultsDiv">
-Search results will appear here if there is a search term in the widget.
+<p id="noResult">No matches found.</p>
+<ul id="searchResultsList">
+<li id="searchResults">Search results:</li>
+</ul>
 </div>
 <div id="sortOptionsDiv">
 <label id="sortLabel" for="sortSelect">Sort by</label>

@@ -79,10 +79,43 @@ function populateMessageDiv() {
 	}
 }
 
+function populateSearchDiv(term) {
+	term = term.toLowerCase();
+	var hits = [];
+	$("#searchResultsDiv").show();
+	$("#noResult").hide();
+	$("#searchResultsList").show();
+	$("#searchResults .row").remove();
+	$("#categoriesDiv .row").each( function () {
+		if ($(this).find(".itemName").text().toLowerCase().includes(term)) {
+			hits.push($(this).clone());
+		}
+	});
+	if (hits.length > 0) {
+		$("#searchResults").append($(".header").first());
+		hits.forEach(function (item) {
+			$("#searchResults").append(item);
+		});
+	} else {
+		$("#searchResultsList").hide();
+		$("p#noResult").show();
+	}
+}
+
+$("#searchField").change(function () {
+	if ($(this).val() === "") {
+		$("#searchResultsDiv").hide();
+	} else {
+		populateSearchDiv($(this).val());
+	}
+});
+
 $(document).ready(function () {
 	baseForm = $("#updateDiv");
 	$(baseForm).remove();
 	populateMessageDiv();
+	$("#searchResultsDiv").hide();
+	$("p#noResult").hide()
 });
 
 function validateUnit(input, isWhole) {
