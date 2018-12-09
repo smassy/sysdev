@@ -99,4 +99,5 @@ echo $this->Form->button("Dismiss", ["type" => "button", "onclick" => "dismiss()
 echo $this->Form->end();
 ?>
 </div>
+echo $this->Html->script("unitsValidation");
 <?= $this->Html->script("dashboard") ?>

@@ -11,8 +11,8 @@ echo $this->Form->control("name", ["id" => "itemName"]); ?>
 <label id="supLabel" class="optLabel" for="supSelect">Supplier</label> <?= $this->Form->select("Items.supplier_id", $suppliers->combine("id", "name"), ["id" => "supSelect"]); ?>
 <button class="manageBtn" type="button" onclick="manage('suppliers')">Manage</button>
 </div>
-<?php echo $this->Form->control("qty", ["label" => "Quantity", "id" => "itemQty"]);
-echo $this->Form->control("threshold", ["label" => "Low stock threshold", "id" => "itemThreshold"]); ?>
+<?php echo $this->Form->control("qty", ["min" => 0, "label" => "Quantity", "id" => "itemQty"]);
+echo $this->Form->control("threshold", ["min" => 0, "label" => "Low stock threshold", "id" => "itemThreshold"]); ?>
 <div class="select" id="uniDiv">
 <label id="uniLabel" class="optLabel" for="uniSelect">Unit</label> <?= $this->Form->select("Items.unit_id", $units->combine("id", "name"), ["id" => "uniSelect"]); ?>
 <button class="manageBtn" type="button" onclick="manage('units')">Manage</button>
@@ -22,6 +22,7 @@ echo $this->Form->button(__("Save Item"));
 echo $this->Form->button(__("Undo"), ["type" => "reset", "id" => "clearBtn"]);
 echo $this->Form->button(__("Cancel"), ["type" => "button", "id" => "cancelBtn", "onclick" => "window.location='/items/list'"]);
 echo $this->Form->end();
+echo $this->Html->script("unitsValidation");
 echo $this->Html->script("itemForm");
 ?>
 <script>

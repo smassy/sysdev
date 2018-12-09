@@ -52,3 +52,13 @@ function reload() {
 $(document).ready(function () {
 	restoreState();
 });
+
+$("#uniSelect").change(function () {
+	var isWhole = units[$(this).val()]["is_whole"];
+	validateUnit($("#itemQty"), isWhole);
+	validateUnit($("#itemThreshold"), isWhole);
+});
+
+
+
+
