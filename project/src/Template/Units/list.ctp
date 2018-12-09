@@ -26,7 +26,7 @@
 <button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $unit->name)) . "-" . $unit->id?>">Edit</button>
 </td>
 <td>
-<?php echo $unit->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a unit can be deleted.')\">?</button>" : $this->Form->postLink("Delete", ["action" => "delete", $unit->id], ["role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this unit?"]) ?>
+<?php echo $unit->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a unit can be deleted.')\">?</button>" : $this->Form->postLink("<button>Delete</button>", ["action" => "delete", $unit->id], ["escape" => false, "role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this unit?"]) ?>
 </td>
 </tr>
 <?php endforeach; ?>

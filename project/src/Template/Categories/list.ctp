@@ -22,7 +22,7 @@
 <button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $category->name)) . "-" . $category->id?>">Edit</button>
 </td>
 <td>
-<?php echo $category->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a category can be deleted.')\">?</button>" : $this->Form->postLink("Delete", ["action" => "delete", $category->id], ["role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this category?"]) ?>
+<?php echo $category->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a category can be deleted.')\">?</button>" : $this->Form->postLink("<button>Delete</button>", ["action" => "delete", $category->id], ["role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this category?", "escape" => false]) ?>
 </td>
 </tr>
 <?php endforeach; ?>
