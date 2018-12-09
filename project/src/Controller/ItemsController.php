@@ -148,4 +148,8 @@ class ItemsController extends AppController
 
         return $this->redirect(['action' => 'list']);
     }
+
+    public function isAuthorized($user) {
+	    return true;
+    }
 }
