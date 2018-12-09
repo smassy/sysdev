@@ -1,4 +1,6 @@
 'use strict';
+var baseForm;
+var form;
 
 $("#sortSelect, #reverseCheckbox, #showCategories").change(function () {
 	var newLoc = window.location.toString();
@@ -28,4 +30,58 @@ function getQueryString() {
 	return (qString.length > 1) ? qString : "";
 }
 
+/*
+ * Executed when a qty button is clicked.
+ * Shows the form to update the item's qty.
+*/
+function showUPdateField(id, oldQty, unit, isWhole) {
+	if (form) {
+		alert("Concurrent updates are not supported at the moment. Please save or dismiss the currently active update field");
+		return;
+	}
+	isWhole = (isWhole === 1 ? true : false);
+	var item = $("#item-" + id);
+	$(item).find(".stockAge").hide();
+	var itemLi = $(item).find(".itemQty");
+	$(itemLi).find("button").hide()
+	form = $(baseForm).clone();
+	$(form).attr("id", "update-" + id);
+	$(form).find("form").attr("action", "/items/edit/" + id);
+	$(form).find(".dismissBtn").attr("onclick", "dismiss(" + id + ")");
+	$(form).find("#updateField").val(oldQty);
+	$(itemLi).prepend(form);
+	$(form).show();
+	$(form).find("#updateField").focus();
+	validateUnit($(form).find("#updateField"), isWhole);
+}
 
+function dismiss(id) {
+	if (form) {
+		$(form).remove();
+		form = null;
+		$("#item-" + id + " button").show();
+		$("#item-" + id + " .stockAge").show();
+	}
+}
+
+$(document).ready(function () {
+	baseForm = $("#updateDiv");
+	$(baseForm).remove();
+});
+
+function validateUnit(input, isWhole) {
+	if (isWhole) {
+		$(input).attr("step", 1);
+	} else {
+		$(input).attr("step", 0.25);
+	}
+	$(input).keydown(function (event) {
+		if (event.which === 173) {
+			alert("Negative values are not allowed.");
+			event.preventDefault();
+		} else if (isWhole && event.which === 190) {
+			alert("No decimals allowed with this unit.");
+			event.preventDefault();
+		}
+	})
+}

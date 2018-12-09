@@ -73,7 +73,7 @@ if ($item->qty > $item->threshold) {
 <ul class="item <?= $stockClass ?>" id="<?= "item-" . $item->id ?>">
 <li class="itemName"><?= $this->Html->link($item->name, ["action" => "view", $item->id], ["class" => "viewLink"]) ?></li>
 <li class="itemSupplier"><?= $item->supplier->name ?></li>
-<li class="itemQty"><span class="itemQtyNum"><?= $item->qty ?></span>&nbsp;<span class="itemUnit"><?=$item->unit->name?></span></li>
+<li class="itemQty"><button class="itemQtyNum" onclick="showUPdateField(<?= $item->id . "," . $item->qty . ",'" . $item->unit->name . "'," . $item->unit->is_whole?>)"><?= $item->qty ?></button>&nbsp;<span class="itemUnit"><?=$item->unit->name?></span></li>
 <li class="stockAge"><?= $item->getDaysSinceArrived() > -1 ? $item->getDaysSinceArrived() . "D" : "-" ?></li>
 </ul>
 </div>
@@ -82,5 +82,14 @@ if ($item->qty > $item->threshold) {
 <?php endif; ?>
 <?php endforeach; ?>
 </ul>
+</div>
+<div id="updateDiv">
+<?php
+echo $this->Form->create($blankItem, ["url" => "/items/edit/", "id" => "updateForm"]);
+echo $this->Form->control("qty", ["id" => "updateField", "min" => "0"]);
+echo $this->Form->button("save", ["class" => "submitBtn"]);
+echo $this->Form->button("Dismiss", ["type" => "button", "onclick" => "dismiss()", "class" => "dismissBtn"]);
+echo $this->Form->end();
+?>
 </div>
 <?= $this->Html->script("dashboard") ?>

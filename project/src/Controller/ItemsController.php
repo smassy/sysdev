@@ -48,6 +48,7 @@ class ItemsController extends AppController
 		$order = SORT_ASC;
 	}
 	$this->set(compact("sort", "order"));
+	$this->set("blankItem", $this->Items->newEntity());
 	$this->set(compact("categories"));
     }
 
