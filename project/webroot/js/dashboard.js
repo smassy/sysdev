@@ -102,7 +102,7 @@ function populateSearchDiv(term) {
 	}
 }
 
-$("#searchField").change(function () {
+$("#searchField").keyup(function () {
 	if ($(this).val() === "") {
 		$("#searchResultsDiv").hide();
 	} else {
