@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <h1>Manage Suppliers</h1>
 <h2>Current Suppliers</h2>
 <table class="manageSecondary" id="suppliersTable">
@@ -19,10 +20,10 @@
 <?php echo $supplier->count ?>
 </td>
 <td>
-<button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $supplier->name)) . "-" . $supplier->id?>">Edit</button>
+<button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $supplier->name)) . "-" . $supplier->id?>"><i class ="fa fa-edit"></i></button>
 </td>
 <td>
-<?php echo $supplier->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a supplier can be deleted.')\">?</button>" : $this->Form->postLink("<button>Delete</button>", ["action" => "delete", $supplier->id], ["escape" => false, "role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this supplier?"]) ?>
+<?php echo $supplier->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a supplier can be deleted.')\"><i class=\"fa fa-info-circle\"></i></button>" : $this->Form->postLink("<button><i class=\"fa fa-trash\"></i></button>", ["action" => "delete", $supplier->id], ["escape" => false, "role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this supplier?"]) ?>
 </td>
 </tr>
 <?php endforeach; ?>

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <h1>Manage units</h1>
 <h2>Current units</h2>
 <table class="manageSecondary" id="unitsTable">
@@ -23,10 +24,10 @@
 <?php echo $unit->count ?>
 </td>
 <td>
-<button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $unit->name)) . "-" . $unit->id?>">Edit</button>
+<button class="editAction" id="edit-<?php echo urlencode(str_replace("-", "__", $unit->name)) . "-" . $unit->id?>"><i class ="fa fa-edit"></i></button>
 </td>
 <td>
-<?php echo $unit->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a unit can be deleted.')\">?</button>" : $this->Form->postLink("<button>Delete</button>", ["action" => "delete", $unit->id], ["escape" => false, "role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this unit?"]) ?>
+<?php echo $unit->count > 0 ? "<button class=\"noDelete\" onclick=\"alert('All associations must be removed before a unit can be deleted.')\"><i class=\"fa fa-info-circle\"></i></button>" : $this->Form->postLink("<button><i class=\"fa fa-trash\"></i></button>", ["action" => "delete", $unit->id], ["escape" => false, "role" => "button", "class" => "delAction", "confirm" => "Do you really want to delete this unit?"]) ?>
 </td>
 </tr>
 <?php endforeach; ?>
