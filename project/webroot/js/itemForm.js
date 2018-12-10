@@ -51,6 +51,11 @@ function reload() {
 
 $(document).ready(function () {
 	restoreState();
+	$("#itemThreshold, #itemQty").each(function () {
+		if ($("#uniSelect").val() !== "") {
+			validateUnit(this, units[$("#uniSelect").val()]["is_whole"]);
+		}
+	});
 });
 
 $("#uniSelect").change(function () {
